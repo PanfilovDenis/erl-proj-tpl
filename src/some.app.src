@@ -1,0 +1,11 @@
+% -*- mode: Erlang;-*-
+{application, some,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [kernel, stdlib]},
+  {mod, { some_app, []}},
+  {env, [
+	]}
+ ]}.
