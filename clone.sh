@@ -34,7 +34,12 @@ rm some.app.src some.app.src.tmp
 
 sed s:"-module(some":"-module($PROJ_NAME": some_app.erl > some_app.erl.tmp
 sed s:"application\:start(some)":"application\:start($PROJ_NAME)": \
-some_app.erl.tmp > ${PROJ_NAME}_app.erl
+some_app.erl.tmp > some_app.erl
+sed s:"some_sup\:start_link":"${PROJ_NAME}_sup\:start_link": \
+some_app.erl > ${PROJ_NAME}_app.erl
 rm some_app.erl some_app.erl.tmp
+
+sed s:"-module(some":"-module($PROJ_NAME": some_sup.erl >  ${PROJ_NAME}_sup.erl
+rm some_sup.erl
 
 exit 0
