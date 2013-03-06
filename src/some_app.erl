@@ -6,7 +6,6 @@
 -include("logger.hrl").
 
 start() ->
-    ssl:start(),
     application:start(some),
     ok.
 

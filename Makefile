@@ -23,4 +23,4 @@ dialyzer:
 	dialyzer --src -I include src
 
 dialyzer_beam:
-	dialyzer -I include ebin
+	dialyzer ebin
