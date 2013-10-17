@@ -1,6 +1,6 @@
 ERL_RUN_ARGS:=-pa ebin -config elog -boot start_sasl -s some_app start
 
-compile: get-deps
+compile: 
 	rebar compile
 
 get-deps:

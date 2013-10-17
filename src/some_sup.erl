@@ -21,7 +21,7 @@ init([]) ->
     SomeWorker = {some_worker,
 		  {some_worker, start_link, []}, 
 		  Restart, Shutdown, worker, 
-		  [somw_worker]},
+		  [some_worker]},
 
     {ok, {SupFlags, []}}.
 
