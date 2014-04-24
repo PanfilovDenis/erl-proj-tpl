@@ -1,4 +1,4 @@
-% -*- mode: Erlang;-*-
+%% -*- mode: Erlang;-*-
 {application, some,
  [
   {description, ""},
@@ -6,6 +6,5 @@
   {registered, []},
   {applications, [kernel, stdlib]},
   {mod, {some_app, []}},
-  {env, [
-	]}
+  {env, []}
  ]}.

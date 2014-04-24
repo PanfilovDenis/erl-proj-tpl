@@ -2,6 +2,10 @@
 
 # create new erlang project based on this template
 
+## TODO:
+## some.config -> app_name.config
+## Makefile args some.config -> app_name.config
+
 PROJ_NAME=$1
 if [ -z $PROJ_NAME ]; then
     echo "usage: ./clone.sh PROJ_NAME [DESTINATION]"

@@ -1,16 +1,23 @@
-ERL_RUN_ARGS:=-pa ebin -config elog -boot start_sasl -s some_app start
+ERL_RUN_ARGS:=+pc unicode -pa ebin -config some -boot start_sasl -s some_app start
 
-compile: 
+compile:
+	rebar compile skip_deps=true
+
+compile-all:
 	rebar compile
 
 get-deps:
 	rebar get-deps
 
 clean:
-	rebar clean
+	rebar clean skip_deps=true
 	rm -f erl_crash.dump
 
-test:	compile
+clean-all:
+	rebar clean skip_deps=true
+	rm -f erl_crash.dump
+
+eunit:
 	rebar eunit skip_deps=true
 
 run:
@@ -23,4 +30,4 @@ d:
 	dialyzer --src -I include src
 
 etags:
-	etags src/* 
+	etags src/*
