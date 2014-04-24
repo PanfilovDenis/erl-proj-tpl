@@ -2,10 +2,6 @@
 
 # create new erlang project based on this template
 
-## TODO:
-## some.config -> app_name.config
-## Makefile args some.config -> app_name.config
-
 PROJ_NAME=$1
 if [ -z $PROJ_NAME ]; then
     echo "usage: ./clone.sh PROJ_NAME [DESTINATION]"
@@ -28,8 +24,12 @@ cd $DIR
 rm clone.sh
 echo "# $PROJ_NAME\n\nproject description here" > README.md
 
-sed s:"-s some_app start":"-s ${PROJ_NAME}_app start": Makefile > Makefile.tmp
-mv Makefile.tmp Makefile
+sed s:"some":"${PROJ_NAME}": some.config > ${PROJ_NAME}.config
+rm some.config
+
+sed s:"-config some":"-config ${PROJ_NAME}": Makefile > Makefile.tmp
+sed s:"-s some_app start":"-s ${PROJ_NAME}_app start": Makefile.tmp > Makefile
+rm Makefile.tmp
 
 cd src
 sed s:"{application, some":"{application, $PROJ_NAME": some.app.src > some.app.src.tmp
