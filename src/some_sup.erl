@@ -1,6 +1,4 @@
 -module(some_sup).
--author('Yura Zhloba <yzh44yzh@gmail.com>').
-
 -behaviour(supervisor).
 
 -export([start_link/0, init/1]).

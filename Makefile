@@ -14,7 +14,7 @@ clean:
 	rm -f erl_crash.dump
 
 clean-all:
-	rebar clean skip_deps=true
+	rebar clean
 	rm -f erl_crash.dump
 
 eunit:

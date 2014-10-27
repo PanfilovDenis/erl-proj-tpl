@@ -1,10 +1,5 @@
 -module(some_tests).
--author('Yura Zhloba <yzh44yzh@gmail.com>').
-
--include("common.hrl").
--include("logger.hrl").
 -include_lib("eunit/include/eunit.hrl").
-
 
 start_test() ->
     ?assert(5 == 5),
